@@ -1,0 +1,48 @@
+{
+	"name": "qq-bot",
+	"version": "1.0.0",
+	"description": "星川涟bot QQ机器人仓库",
+	"main": "./src/index.js",
+	"scripts": {
+		"start": "node ./src/index.js",
+		"dev": "cross-env sandbox=true node ./src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xiaotong-tong/qq-bot.git"
+	},
+	"keywords": [
+		"qq",
+		"bot",
+		"qq机器人",
+		"星川涟"
+	],
+	"author": "小恸恸",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/xiaotong-tong/qq-bot/issues"
+	},
+	"homepage": "https://github.com/xiaotong-tong/qq-bot#readme",
+	"dependencies": {
+		"@types/qrcode": "^1.5.5",
+		"axios": "^1.7.4",
+		"dayjs": "^1.11.10",
+		"days-quotes": "github:xiaotong-tong/days-quotes",
+		"dotenv": "^16.3.1",
+		"form-data": "^4.0.0",
+		"jimp": "^0.22.12",
+		"jsqr": "^1.4.0",
+		"kuroshiro": "^1.2.0",
+		"kuroshiro-analyzer-kuromoji": "^1.1.0",
+		"mysql2": "^3.5.1",
+		"pinyin-pro": "^3.25.0",
+		"qrcode": "^1.5.3",
+		"sequelize": "^6.32.1",
+		"ws": "^8.18.0",
+		"xtt-msg": "^2.0.1-alpha.6",
+		"xtt-utils": "^0.1.2"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3"
+	}
+}

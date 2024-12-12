@@ -1,0 +1,9 @@
+node_modules/
+
+# 隐私文件
+.env
+
+# 临时文件
+uploads/
+font_cache/
+qrcode.png
