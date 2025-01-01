@@ -18,7 +18,7 @@ async function doShareChineseDictionaryWordImage(d) {
 			topic.jp.list[random(0, topic.jp.count)]
 		);
 
-		const content = `这次的三题点心是 “${cnWords[0].word}”、“${cnWords[1].word}” 和 “${cnWords[2].word}” 哦~ 不知能品尝到什么样的味道呢？\nもし日本語でやれば、「${jpWords[0].word}」、「${jpWords[1].word}」と「${jpWords[2].word}」はどうでしょうか、どんな美味しいものを書けますか。`;
+		const content = `呼呼，这次的三题点心主题是 “${cnWords[0].word}”、“${cnWords[1].word}” 和 “${cnWords[2].word}” 哦~ 不知能以此做出什么味道的美味呢？\nもし日本語でやれば、「${jpWords[0].word}」、「${jpWords[1].word}」と「${jpWords[2].word}」はどうでしょうか、どんな美味しいものを作れるだろう`;
 
 		Import.sendGroupMessage(d.group_openid, {
 			content: content,

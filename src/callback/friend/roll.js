@@ -10,7 +10,7 @@ async function doShareRoll(d) {
 
 		if (format === "" || format === undefined || format === null) {
 			Import.sendFriendMessage(d.author.user_openid, {
-				content: "无法理解指令喵~",
+				content: "星川涟不理解指令喵~请输入类似于“/骰娘 .r2d20+5”的指令喵~",
 				msg_type: 0,
 				msg_id: d.id // 必填，用来确认是被动回复的标志
 			});
