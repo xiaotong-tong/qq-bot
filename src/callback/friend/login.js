@@ -27,7 +27,7 @@ async function doLogin(d) {
 		}
 
 		Import.sendFriendMessage(qq, {
-			content: `您的登录口令为\n${item.password}\n请勿泄露哦(◍＞◡＜◍)`,
+			content: `您的登录口令为\n${item.password}\n请勿泄露哦(◍＞◡＜◍)\n秘密のパスワードは「${item.password}」\n他の人に言わないでね、約束してくれると嬉しいな(｡•̀ᴗ-)و ̑̑✧`,
 			msg_type: 0,
 			msg_id: d.id // 必填，用来确认是被动回复的标志
 		});

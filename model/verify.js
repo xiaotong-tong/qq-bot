@@ -1,3 +1,7 @@
+/*
+ * 当前表模型和 https://github.com/xiaotong-tong/website-server/blob/main/model/verify.js 一致，如果有修改，必须同步修改
+ */
+
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db.js");
 
@@ -14,6 +18,10 @@ const Verify = sequelize.define(
 		name: {
 			type: DataTypes.STRING(64),
 			comment: "昵称"
+		},
+		jpName: {
+			type: DataTypes.STRING(64),
+			comment: "日文昵称"
 		},
 		password: {
 			type: DataTypes.UUID,
@@ -40,6 +48,11 @@ const Verify = sequelize.define(
 			type: DataTypes.STRING(255),
 			defaultValue: "https://image.xtt.moe/images/mlian2.md.webp",
 			comment: "头像 URL"
+		},
+		isMaster: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+			comment: "是否为主人账号"
 		}
 	},
 	{
