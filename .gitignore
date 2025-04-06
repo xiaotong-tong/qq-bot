@@ -5,5 +5,6 @@ node_modules/
 
 # 临时文件
 uploads/
+output/
 font_cache/
 qrcode.png

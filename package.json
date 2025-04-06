@@ -39,6 +39,7 @@
 		"pinyin-pro": "^3.25.0",
 		"qrcode": "^1.5.3",
 		"sequelize": "^6.32.1",
+		"silk-wasm": "^3.6.3",
 		"ws": "^8.18.0",
 		"xtt-msg": "^2.0.1-alpha.6",
 		"xtt-utils": "^0.1.2"
