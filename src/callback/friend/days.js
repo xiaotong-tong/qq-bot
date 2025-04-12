@@ -4,28 +4,18 @@ const { encode, getWavFileInfo } = require("silk-wasm");
 const fs = require("fs");
 const path = require("path");
 
-const quotesList = require("@xtt-nami/days-quotes");
-const originDay = dayjs("2024-08-29 00:00:00");
-
-const rootDir = path.resolve(__dirname, "../../../");
-const outputDir = process.env.sandbox ? path.join(rootDir, "output", "silk") : "/var/www/cache/silk";
-
-// 如果没有 outputDir 文件夹，就创建一个
-if (!fs.existsSync(outputDir)) {
-	fs.mkdirSync(outputDir, {
-		recursive: true
-	});
-}
+const { quotesCount, list } = require("../data/days-quotes.js");
+const { originDay, silkOutputDir } = require("../data/common.js");
 
 async function doShareDaysQuotesImage(d) {
 	if (d.content.trim() === "/今日日语") {
 		let key = dayjs().diff(originDay, "day");
 
-		if (key > quotesList.quotesCount) {
-			key = key % quotesList.quotesCount;
+		if (key > quotesCount) {
+			key = key % quotesCount;
 		}
 
-		const data = quotesList.list[key - 1];
+		const data = list[key - 1];
 
 		Import.sendFriendMessage(d.author.user_openid, {
 			content: data.sentence,
@@ -41,7 +31,7 @@ async function doShareDaysQuotesImage(d) {
 					// const info = getWavFileInfo(wav);
 					// const sampleRate = info.fmt.sampleRate;
 					encode(wav, 24000).then((silk) => {
-						fs.writeFileSync(path.join(outputDir, data.key + ".silk"), silk.data);
+						fs.writeFileSync(path.join(silkOutputDir, data.key + ".silk"), silk.data);
 
 						Import.sendFriendMessage(d.author.user_openid, {
 							type: 1,

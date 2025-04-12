@@ -1,6 +1,5 @@
 const Import = require("../../index.js");
-
-const { pinyin } = require("pinyin-pro");
+const { pinyin } = require("../data/pinyin.js");
 
 async function sendPinyin(d) {
 	const content = d.formatContent;

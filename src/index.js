@@ -237,11 +237,14 @@ async function sendFriendMessage(target, messageChain) {
 }
 
 module.exports = {
-	ws,
 	sendGroupMessage,
 	sendFriendMessage,
-	groupCallbackList,
-	friendCallbackList
+	get groupCallbackList() {
+		return groupCallbackList;
+	},
+	get friendCallbackList() {
+		return friendCallbackList;
+	}
 };
 
 // 导入 callback 模块
@@ -265,3 +268,14 @@ require("./callback/friend/miao.js");
 require("./callback/friend/roll.js");
 require("./callback/friend/pinyin.js");
 require("./callback/friend/chineseDictionaryWord.js");
+
+// setInterval(() => {
+// 	const memoryUsage = process.memoryUsage();
+// 	console.log({
+// 		rss: `${Math.round((memoryUsage.rss / 1024 / 1024) * 100) / 100} MB`, // Resident Set Size
+// 		heapTotal: `${Math.round((memoryUsage.heapTotal / 1024 / 1024) * 100) / 100} MB`,
+// 		heapUsed: `${Math.round((memoryUsage.heapUsed / 1024 / 1024) * 100) / 100} MB`,
+// 		external: `${Math.round((memoryUsage.external / 1024 / 1024) * 100) / 100} MB`,
+// 		arrayBuffers: `${Math.round((memoryUsage.arrayBuffers / 1024 / 1024) * 100) / 100} MB`
+// 	});
+// }, 5000);

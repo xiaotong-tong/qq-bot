@@ -1,7 +1,7 @@
-const Import = require("../../index.js");
+const { friendCallbackList, sendFriendMessage } = require("../../index.js");
 const { random } = require("xtt-utils");
-const { topic } = require("@xtt-nami/days-quotes");
-const openai = require("../../../utils/openai.js");
+const { topic } = require("../data/days-quotes.js");
+const { openai } = require("../../../utils/openai.js");
 
 async function doShareChineseDictionaryWordImage(d) {
 	if (d.content.trim() === "/三题故事") {
@@ -21,7 +21,7 @@ async function doShareChineseDictionaryWordImage(d) {
 
 		const content = `呼呼，这次的三题点心主题是 “${cnWords[0].word}”、“${cnWords[1].word}” 和 “${cnWords[2].word}” 哦~ 不知能以此做出什么味道的美味呢？\nもし日本語でやれば、「${jpWords[0].word}」、「${jpWords[1].word}」と「${jpWords[2].word}」はどうでしょうか、どんな美味しいものを作れるだろう`;
 
-		Import.sendFriendMessage(d.author.user_openid, {
+		sendFriendMessage(d.author.user_openid, {
 			content: content,
 			msg_type: 0,
 			msg_seq: 1,
@@ -39,7 +39,7 @@ async function doShareChineseDictionaryWordImage(d) {
 				]
 			});
 
-			Import.sendFriendMessage(d.author.user_openid, {
+			sendFriendMessage(d.author.user_openid, {
 				content: completion.choices[0].message.content,
 				msg_type: 0,
 				msg_seq: 2,
@@ -51,4 +51,4 @@ async function doShareChineseDictionaryWordImage(d) {
 	}
 }
 
-Import.friendCallbackList.push(doShareChineseDictionaryWordImage);
+friendCallbackList.push(doShareChineseDictionaryWordImage);

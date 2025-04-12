@@ -1,10 +1,5 @@
 const Import = require("../../index.js");
-
-const KuroshiroFactory = require("kuroshiro");
-const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji");
-
-const kuroshiro = new KuroshiroFactory.default();
-kuroshiro.init(new KuromojiAnalyzer());
+const { kuroshiro, KuroshiroFactory } = require("../data/kuroshiro.js");
 
 async function sendKaNa(d) {
 	const content = d.formatContent;

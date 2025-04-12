@@ -1,7 +1,5 @@
-require("dotenv").config();
 const Import = require("../../index.js");
-const Jimp = require("jimp");
-const jsQR = require("jsqr");
+const { read, jsQR } = require("../data/qrcode.js");
 
 async function sendEncodeQRCode(d) {
 	if (d.content.trim().startsWith("/解析二维码")) {
@@ -17,7 +15,7 @@ async function sendEncodeQRCode(d) {
 				return;
 			}
 
-			Jimp.read(url, (err, image) => {
+			read(url, (err, image) => {
 				if (err) {
 					console.error(err);
 					Import.sendGroupMessage(d.user_openid, {
