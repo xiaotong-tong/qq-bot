@@ -1,6 +1,6 @@
 const Import = require("../../index.js");
 const { random } = require("xtt-utils");
-const { topic } = require("days-quotes");
+const { topic } = require("@xtt-nami/days-quotes");
 const openai = require("../../../utils/openai.js");
 
 async function doShareChineseDictionaryWordImage(d) {

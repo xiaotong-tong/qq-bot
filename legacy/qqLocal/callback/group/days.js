@@ -3,7 +3,7 @@ const dayjs = require("dayjs");
 const timezone = require("dayjs/plugin/timezone");
 const puppeteer = require("puppeteer");
 
-const quotesList = require("days-quotes");
+const quotesList = require("@xtt-nami/days-quotes");
 const originDay = dayjs("2024-04-14");
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Shanghai");

@@ -4,7 +4,7 @@ const { encode, getWavFileInfo } = require("silk-wasm");
 const fs = require("fs");
 const path = require("path");
 
-const quotesList = require("days-quotes");
+const quotesList = require("@xtt-nami/days-quotes");
 const originDay = dayjs("2024-08-29 00:00:00");
 
 const rootDir = path.resolve(__dirname, "../../../");
