@@ -177,7 +177,8 @@ async function sendGroupMessage(target, messageChain) {
 		messageChain = {
 			msg_type: 7,
 			media: data,
-			msg_id: messageChain.msg_id
+			msg_id: messageChain.msg_id,
+			msg_seq: messageChain.msg_seq
 		};
 	}
 
@@ -201,7 +202,7 @@ async function sendFriendMessage(target, messageChain) {
 		return;
 	}
 
-	let qqUrl = `${domain}/v2/users/${target}/messages`;
+	const qqUrl = `${domain}/v2/users/${target}/messages`;
 
 	if (messageChain.type === 1) {
 		const mediaUrl = `${domain}/v2/users/${target}/files`;
@@ -218,7 +219,8 @@ async function sendFriendMessage(target, messageChain) {
 		messageChain = {
 			msg_type: 7,
 			media: data,
-			msg_id: messageChain.msg_id
+			msg_id: messageChain.msg_id,
+			msg_seq: messageChain.msg_seq
 		};
 	}
 
